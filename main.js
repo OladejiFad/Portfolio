@@ -23,7 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const targetId = link.getAttribute('href').substring(1);
       const target = document.getElementById(targetId);
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      if (target) {
+        const navbar = document.querySelector('nav.navbar');
+        const navbarHeight = navbar.offsetHeight;
+
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: targetPosition - navbarHeight,
+          behavior: 'smooth'
+        });
+      }
 
       // Auto-collapse navbar on mobile after clicking a nav link
       const navbarCollapse = document.getElementById('navMenu');

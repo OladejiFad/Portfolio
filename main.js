@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     darkModeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}"></i> ${isDark ? 'Light' : 'Dark'} Mode`;
   });
 
-  // Smooth scroll for nav links + auto-collapse mobile navbar
+
   document.querySelectorAll('.nav-link-scroll').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -35,14 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Auto-collapse navbar on mobile after clicking a nav link
+      // Delay hiding the navbar collapse so scroll can start smoothly
       const navbarCollapse = document.getElementById('navMenu');
       if (navbarCollapse.classList.contains('show')) {
-        let bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (!bsCollapse) {
-          bsCollapse = new bootstrap.Collapse(navbarCollapse);
-        }
-        bsCollapse.hide();
+        setTimeout(() => {
+          let bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (!bsCollapse) {
+            bsCollapse = new bootstrap.Collapse(navbarCollapse);
+          }
+          bsCollapse.hide();
+        }, 200); // 200ms delay
       }
     });
   });
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // Pause videos when lightbox closes (Lightbox2 event)
+
   if (typeof lightbox !== 'undefined' && lightbox) {
     lightbox.option({
       fadeDuration: 300,
@@ -114,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener('lightbox:close', () => {
-      // Find all video elements inside the lightbox container and pause/reset them
+
       const lightboxVideos = document.querySelectorAll('.lb-image video');
       lightboxVideos.forEach(video => {
         video.pause();

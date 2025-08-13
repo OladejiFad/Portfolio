@@ -16,7 +16,6 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
-
 </head>
 <body>
   <header class="bg-dark text-light py-5">
@@ -113,35 +112,30 @@
           <a href="image/Screenshot%20(218).png" data-lightbox="gallery-images"><img src="image/Screenshot%20(218).png" class="img-fluid rounded" alt="Project Image" /></a>
         </div>
       </div>
+
       <h4>Videos</h4>
       <div class="row g-3">
-        <!-- Videos -->
+        <!-- Video thumbnails that open Bootstrap modals -->
         <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="videos/myTrady.mp4" data-lightbox="gallery-videos" data-title="myTrady Video">
-            <div class="responsive-video">
-              <video muted preload="metadata" playsinline>
-                <source src="videos/myTrady.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </a>
+          <div class="responsive-video" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#videoModal1" aria-label="Open myTrady Video">
+            <video controls autoplay muted style="width: 100%; height: auto;">
+              <source src="videos/videostrady2.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="videos/Trady-App-Google-Chrome-2025-07-30-16-12-03.mp4" data-lightbox="gallery-videos" data-title="Trady App Video">
-            <div class="responsive-video">
-              <video muted preload="metadata" playsinline>
-                <source src="videos/Trady-App-Google-Chrome-2025-07-30-16-12-03.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </a>
+          <div class="responsive-video" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#videoModal2" aria-label="Open Trady App Video">
+            <video controls autoplay muted style="width: 100%; height: auto;">
+              <source src="videos/videostrady.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
         <div class="col-sm-6 col-md-4 col-lg-3">
-          <a href="videos/Sunday-Ecommerce-Google-Chrome-2025-08-12-19-20-44.mp4" data-lightbox="gallery-videos" data-title="Sunday Ecommerce Video">
-            <div class="responsive-video">
-              <video muted preload="metadata" playsinline>
-                <source src="videos/Sunday-Ecommerce-Google-Chrome-2025-08-12-19-20-44.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </a>
+          <div class="responsive-video" role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#videoModal3" aria-label="Open Sunday Ecommerce Video">
+            <video controls autoplay muted style="width: 100%; height: auto;">
+              <source src="videos/videossunday.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
     </section>
@@ -184,6 +178,58 @@
     &copy; 2025 Fadare Oladeji Sunday
   </footer>
 
+  <!-- Video Modals -->
+  <div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-light" id="videoModal1Label">myTrady Video</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <video controls autoplay style="width: 100%; height: auto;">
+            <source src="videos/videostrady2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-light" id="videoModal2Label">Trady App Video</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <video controls autoplay style="width: 100%; height: auto;">
+            <source src="videos/videostrady.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-light" id="videoModal3Label">Sunday Ecommerce Video</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <video controls autoplay style="width: 100%; height: auto;">
+            <source src="videos/videossunday.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -197,6 +243,5 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script src="main.js"></script>
-
 </body>
 </html>

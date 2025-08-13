@@ -95,4 +95,21 @@ document.addEventListener("DOMContentLoaded", () => {
         formMessage.textContent = 'Error sending message. Please try again.';
       });
   });
+
+  // Pause videos when lightbox closes (Lightbox2 event)
+  if (typeof lightbox !== 'undefined' && lightbox) {
+    lightbox.option({
+      fadeDuration: 300,
+      resizeDuration: 300
+    });
+
+    document.addEventListener('lightbox:close', () => {
+      // Find all video elements inside the lightbox container and pause/reset them
+      const lightboxVideos = document.querySelectorAll('.lb-image video');
+      lightboxVideos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  }
 });
